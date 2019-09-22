@@ -1,0 +1,50 @@
+9.1
+fin=open('words.txt')
+for line in fin:
+    word=line.strip()
+    if len(word)>20:
+        print(word)
+
+9.2
+def  has_no_e(word):
+    if 'e' in word:
+        return False
+    else:
+        return True
+print(has_no_e("sukhie"))
+
+fin=open('words.txt')
+count_e=0
+count=0
+for line in fin:
+    word=line.strip()
+    if "e"not in word:
+        count_e+=1
+        print(word,end=',')
+    else:
+         count+=1
+c=(count_e/count)*100
+print('\nPercentage of the words that have no e =',c)
+
+9.3
+def avoids(word,forbidden):
+     if forbidden not in word:
+          return True
+     else:
+          return False
+print(avoids('sukhi','s'))
+
+
+def avoids(word_a, forbidden):
+    for line in fin:
+        word=line.strip()
+        if forbidden not in word:        
+            print(word,end=',')
+
+
+
+word_a=input('Enter the word: ')
+forbidden=input('Enter the forbidden letters: ')
+fin=open('words.txt')
+avoids(word_a,forbidden)
+
